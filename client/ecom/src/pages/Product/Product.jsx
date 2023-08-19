@@ -16,7 +16,6 @@ const Product = () => {
         `/products/${id}?populate=*`
     )
 
-
     return (
         <div className='product'>
             {loading ? "Loading" : <>
@@ -32,9 +31,9 @@ const Product = () => {
                 </div>
 
                 <div className="right">
-                    <h1>Title</h1>
-                    <span className='price'>$199</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates minus nesciunt impedit eligendi eos libero, incidunt est quo odio dolores veniam minima quos quidem tempore dolor exercitationem molestiae eius dolorem.</p>
+                    <h1>{data?.attributes?.title}</h1>
+                    <span className='price'>${data?.attributes?.price}</span>
+                    <p>{data?.attributes?.description}</p>
 
                     <div className="quantity">
                         <button onClick={() => setQuantity(prev => prev === 1 ? 1 : prev - 1)}>-</button>
